@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Regular";
+  src: url("/fonts/regular.otf");
+}
+
+@font-face {
+  font-family: "SemiBold";
+  src: url("/fonts/semibold.otf");
+}
+
+@theme {
+  --font-regular: "Regular";
+  --font-semibold: "SemiBold";
+  --color-blue: #0071e3;
+  --color-light: #adb5bd;
+  --color-dark-100: #86868b;
+  --color-dark-200: #2e2e30;
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility flex-col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+@utility abs-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility large-semibold {
+  @apply font-semibold text-xl text-dark-100;
+}
+
+@utility base-semibold {
+  @apply font-semibold text-base text-dark-100;
+}
+
+@utility small-regular {
+  @apply font-regular text-xs;
+}
+
+* {
+  scrollbar-color: var(--color-dark-100) var(--color-black);
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-black);
+  color: var(--color-dark-100);
+  font-family: var(--font-semibold);
+}
+
+#canvas {
+  @apply !w-full !h-[80vh] relative z-25;
+}
+
+#p-1 {
+  @apply absolute bottom-1/2 left-[23%] z-1 max-md:left-[33%];
+}
+
+#p-2 {
+  @apply absolute bottom-[40%] right-[17%] z-3 max-md:right-[37%];
+}
+
+#p-3 {
+  @apply absolute bottom-1/4 right-[15%] z-2 max-md:right-[35%];
+}
+
+#p-4 {
+  @apply absolute bottom-[15%] right-[10%] z-1 max-md:right-[30%];
+}
+
+#p-5 {
+  @apply absolute bottom-[20%] left-1/2 -translate-x-1/2 scale-150;
+}
+
+#p-6 {
+  @apply absolute bottom-1/4 left-1/4 z-2 max-md:left-[35%];
+}
+
+#p-7 {
+  @apply absolute bottom-[5%] left-[15%] z-3 max-md:left-[35%];
+}
+
+#apple-gradient {
+  background: #1d1d1f;
+  background-clip: padding-box; /* !important */
+  border: 3px solid transparent; /* !important */
+
+  ::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    z-index: -1;
+    margin: -5px; /* !important */
+    border-radius: 24px; /* !important */
+    background: linear-gradient(
+      91deg,
+      #0096ff 0%,
+      #bb64ff 42%,
+      #f2416b 74%,
+      #eb7500 100%
+    );
+  }
+
+  span {
+    background: linear-gradient(
+      91deg,
+      #0096ff 0%,
+      #bb64ff 42%,
+      #f2416b 74%,
+      #eb7500 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+#green-gradient {
+  background: linear-gradient(90deg, #35a98a 0%, #6dd400 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
